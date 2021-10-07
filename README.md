@@ -43,36 +43,43 @@ BraggNN is developed in the DOE BES project **Actionable Information from Sensor
 
 ### Ptychography
 
-TBD
+<img align="right" src="images/TekinSystem.png" width="350">
+
+Ptychography is a non-invasive 2D imaging technique that is widely used at synchrotron light sources to study functional, structural, biological, and energy materials at extremely high spatial resolutions.
+Asample is continuously raster-scanned using a focused X-ray beam and the corresponding diffraction patterns are acquired on a photon-counting pixelated detector. These diffraction patterns are then processed using an iterative ptychographic reconstruction method to generate 2D real-space projection images.
+To enable rapid data analysis and feedback, we define a Flow that (see figure) transfers data from data acquisition machine (edge) to compute cluster (e.g., at ALCF); initiates reconstruction; and transfers reconstructed images back to light source. 
+In the future, additional Flows will be added to index, catalog, and archive images.
+
 
 ### Tomography
 
 TBD
 
+## Flows
+
+Our work with the applications listed above and others are helping us to develop a library of canonical flows. We list some of these here.
+
+1. Analyze data produced by instrument.
+2. Train machine learning model based on data produced by instrument.
+3. Extract metadata from data produced by instrument and add to repository and catalog.
+
 
 ## People
 
-- Rachana Ananthakrishnan
+Work on this project involves numerous talented people at Argonne, the University of Chicago, and other institutions. We list here some of the major participants.
 
-- Tekin Bicer
+* Much of the work on developing new flows is performed by Ryan Chard and Raf Vescosci.
 
-- Ben Blaiszik
+* APS application development engages, among others, Tekin Bicer, Raj Kettimuthu, Zhengchun Liu, and Aniket Tekawade.
 
-- Kyle Chard
+* The Braid project engages Ben Blaiszik, Tekin Bicer, Kyle Chard, Ryan Chard, Ian Foster, Raj Kettimuthu, Zhengchun Liu, Bogdan Nicolae, Raf Vescovi, and Justin Wozniak.
 
-- Ryan Chard
+* The Globus Flows service that we use to coordinate activities is developed by team that includes Rachana Ananthakrishnan, Jim Pruyne, XX, XX.
 
-- Ian Foster
+* At ALCF, we work with Mike Papka and Tom Uram, among others.
 
-- Raj Kettimuthu
+* At APS, we benefit from the work, advice, and help of many, including: Jon Almer, Francesco De Carlo, Andrzej Joachimiak, Suresh Narayanan, Nicholas Schwarz, Darren Sherrell, and Sinisa Veseli.
 
-- Zhengchun Liu
-
-- Bogdan Nicolae
-
-- Rafael Vescovi
-
-- Justin Wozniak
 
 ## Scientific papers
 
