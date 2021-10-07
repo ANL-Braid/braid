@@ -1,7 +1,7 @@
 # Experiments Linked with Infrastructure, Simulation, and AI
 
 
-<img align="right" src="BraidFig.png">
+<img align="right" src="images/BraidFig.png">
 
 Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods are frequently also required.
 
@@ -14,7 +14,7 @@ Gladier allows each of these and other applications to be structured as sets of 
 
 ## Gladier architecture
 
-<img align="right" src="flow4.png">
+<img align="right" src="images/flow4.png">
 
 The Gladier architecture leverages a data/computing substrate based on **data and compute agents** deployed across computer and storage systems at APS, ALCF, and elsewhere, all managed by cloud-hosted Globus services.
 All components are supported by the Globus Auth identity and access management platform to enable single sign on and secure interactions between components.
@@ -27,48 +27,62 @@ Other services support the definition and management of flows that coordinate da
 
 ### Serial Synchrotron Crystallography (SSX)
 
-<img align="right" src="SSXFigureNew.png" width="350">
+<img align="right" src="images/SSXFigureNew.png" width="350">
 
 Serial Synchrotron Crystallography (SSX) requires rapid data processing for the tens of thousands of images captured per hour. To meet these data processing needs we deployed a Globus Flows-based data acquisition, analysis, curation, and visualization pipeline (see figure), leveraging Theta for high-speed on-demand analysis. The pipeline reactively analyzes data as it is collected, moving images from the beamline to ALCF for analysis and visualization. The pipeline then moves results to a repository and extracts metadata for publication in a data portal, which scientists can monitor during an experiment. By generating and delivering statistics and images in near real-time, the Flow enables scientists to determine whether enough data have been collected for a sample, whether a second sample is needed to produce suitable statistics, or whether the sample is not producing enough data to warrant continued processing.
 
 
-### HEDM
+### High Energy Diffraction Microscopy (HEDM)
+
+<img align="right" src="images/HEDM1.png" width="350">
 
 BraggNN is a machine learning-based method that can localize Bragg peaks in high energy diffraction microscopy images more than 200x faster than conventional methods.
-This applicatio 
-
+Data collected at an experiment (at APS or SLAC) is combined with simulation data to train a sample-specific DNN model, which is then deployed to the experiment for fast processing, filtering, and quality control. These various components are incorporated into a Globus Flow.
 For more details, see [ArXiv2008.08198](https://arxiv.org/pdf/2008.08198.pdf). 
 BraggNN is developed in the DOE BES project **Actionable Information from Sensor to Data Center**, in collaboration with SLAC.
 
+### Ptychography
+
+TBD
 
 ### Tomography
 
-
+TBD
 
 
 ## People
 
-Ben Blaiszik
+- Rachana Ananthakrishnan
 
-Kyle Chard
+- Tekin Bicer
 
-Ryan Chard
+- Ben Blaiszik
 
-Ian Foster
+- Kyle Chard
 
-Raj Kettimuthu
+- Ryan Chard
 
-Zhengchun Liu
+- Ian Foster
 
-Bogdan Nicolae
+- Raj Kettimuthu
 
-Rafael Vescovi
+- Zhengchun Liu
 
-Justin Wozniak
+- Bogdan Nicolae
+
+- Rafael Vescovi
+
+- Justin Wozniak
 
 ## Scientific papers
 
 TBD.
+
+## Building blocks
+
+Globus Flows 
+
+funcX 
 
 ## Support
 
