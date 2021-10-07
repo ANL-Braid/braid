@@ -51,9 +51,9 @@ To enable rapid data analysis and feedback, we [define a Flow](https://github.co
 In the future, additional Flows will be added to index, catalog, and archive images.
 
 
-### Tomography
+### X-Ray Photon Correlation Spetroscopy
 
-TBD
+See [the Flow](https://github.com/ANL-Braid/flows#x-ray-photon-correlation-spetroscopy).
 
 ## Flows
 
