@@ -68,29 +68,35 @@ Our work with the applications listed above and others are helping us to develop
 
 Work on this project involves numerous talented people at Argonne, the University of Chicago, and other institutions. We list here some of the major participants.
 
-* Much of the work on developing new flows is performed by Ryan Chard and Raf Vescosci.
+* Much of the work on developing new flows is performed by **Ryan Chard** and **Rafael Vescosci**.
 
-* APS application development engages, among others, Tekin Bicer, Raj Kettimuthu, Zhengchun Liu, and Aniket Tekawade.
+* APS application development engages, among others, **Tekin Bicer**, **Raj Kettimuthu**, **Zhengchun Liu**, and **Aniket Tekawade**.
 
-* The Braid project engages Ben Blaiszik, Tekin Bicer, Kyle Chard, Ryan Chard, Ian Foster, Raj Kettimuthu, Zhengchun Liu, Bogdan Nicolae, Raf Vescovi, and Justin Wozniak.
+* The Braid project engages **Ben Blaiszik**, **Tekin Bicer**, **Kyle Chard**, **Ryan Chard**, **Ian Foster**, **Raj Kettimuthu**, **Zhengchun Liu**, **Bogdan Nicolae**, **Raf Vescovi**, and **Justin Wozniak**.
 
-* The Globus Flows service that we use to coordinate activities is developed by team that includes Rachana Ananthakrishnan, Jim Pruyne, XX, XX.
+* The Globus Flows service that we use to coordinate activities is developed by team that includes **Rachana Ananthakrishnan** and **Jim Pruyne**.
 
-* At ALCF, we work with Mike Papka and Tom Uram, among others.
+* At ALCF, we work with **Mike Papka** and **Tom Uram**, among others.
 
-* At APS, we benefit from the work, advice, and help of many, including: Jon Almer, Francesco De Carlo, Andrzej Joachimiak, Suresh Narayanan, Nicholas Schwarz, Darren Sherrell, and Sinisa Veseli.
+* At APS, we benefit from the work, advice, and help of many, including: **Jon Almer**, **Francesco De Carlo**, **Andrzej Joachimiak**, **Suresh Narayanan**, **Nicholas Schwarz**, **Darren Sherrell**, and **Sinisa Veseli**.
 
 
 ## Scientific papers
 
-TBD.
+High-performance ptychographic reconstruction with federated facilities, Tekin Bicer, Xiaodong Yu, Daniel J. Ching, Ryan Chard, Mathew J. Cherukara, Bogdan Nicolae, Rajkumar Kettimuthu, and Ian T.Foster, Smoky Mountains Conference, 2021
+
+[BraggNN: Fast X-ray Bragg Peak Analysis Using Deep Learning](https://arxiv.org/abs/2008.08198), Zhengchun Liu, Hemant Sharma, Jun-Sang Park, Peter Kenesei, Antonino Miceli, Jonathan Almer, Rajkumar Kettimuthu, Ian Foster, [IUCrJ](https://journals.iucr.org/m/) (to appear). 
 
 ## Building blocks
 
-Globus Flows 
+**Gladier** is a developer-focused framework for creating flows from common building blocks.
 
-funcX 
+**Globus Flows** is a ... 
+
+**[funcX](https://funcx.org)** is ...
 
 ## Support
 
 This work is supported by the U.S. Department of Energy's Office of Advanced Scientific Computing Research, via the project **Braid: Data Flow Automation for Scalable and FAIR Science**, and Office of Basic Energy Science, via the project **Actionable Information from Sensor to Data Center**; the [Argonne Leadership Computing Facilty](https://alcf.anl.gov); the [Advanced Photon Source](https://aps.anl.gov); and Argonne LDRD funds. 
+
+This page is accessible at [https://anl-braid.github.io/braid/](https://anl-braid.github.io/braid/).
