@@ -6,7 +6,7 @@
 Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods are frequently also required.
 
 To address these needs, we have developed a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
-Deployments at Argonne’s Advanced Photon Source (APS) and Leadership Computing Facility (ALCF) has enabled a variety of such solutions, including:
+Deployments at Argonne’s Advanced Photon Source (APS) and Leadership Computing Facility (ALCF) involve a variety of such solutions, including:
 delivery of data produced during tomographic experiments to remote collaborators;
 capture, analysis, and cataloging of data from X-ray Photon Correlation Spectroscopy (XPCS) experiments; and
 feedback based on analysis of data from serial synchrotron crystallography (SSX) experiments to guide data acquisition.
@@ -89,13 +89,14 @@ High-performance ptychographic reconstruction with federated facilities, Tekin B
 
 ## Building blocks
 
-**Gladier** is a developer-focused framework for creating flows from common building blocks.
+**[Globus Flows](https://www.globus.org/platform/services/flows)** is a foundational service for defining and executing secure, reliable automated data flows at scale. We use it to implement many of the application pipelines used by Braid applications.
 
-**Globus Flows** is a ... 
+**[funcX](https://funcx.org)** is a distributed Function as a Service (FaaS) platform that enables flexible, scalable, and high performance remote function execution. We use it to invoke computational tasks from within Flows. 
 
-**[funcX](https://funcx.org)** is ...
+**Gladier** is a developer-focused framework for creating Flows from common building blocks. We use it to author many of our Braid application Flows.
 
-## Support
+
+## Thanks!
 
 This work is supported by the U.S. Department of Energy's Office of Advanced Scientific Computing Research, via the project **Braid: Data Flow Automation for Scalable and FAIR Science**, and Office of Basic Energy Science, via the project **Actionable Information from Sensor to Data Center**; the [Argonne Leadership Computing Facilty](https://alcf.anl.gov); the [Advanced Photon Source](https://aps.anl.gov); and Argonne LDRD funds. 
 
