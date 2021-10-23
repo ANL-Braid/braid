@@ -2,7 +2,7 @@
 layout: home
 ---
 
-<! # Experiments Linked with Infrastructure, Simulation, and AI>
+<!--- # Experiments Linked with Infrastructure, Simulation, and AI --->
 
 
 <img align="right" src="images/BraidFig.png">
