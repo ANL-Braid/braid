@@ -63,7 +63,7 @@ Serial Synchrotron Crystallography (SSX) requires rapid data processing for the 
 <img align="right" src="images/HEDM1.png" width="350">
 
 BraggNN is a machine learning-based method that can localize Bragg peaks in high energy diffraction microscopy images more than 200x faster than conventional methods.
-Data collected at an experiment (at APS or SLAC) is combined with simulation data to train a sample-specific DNN model, which is then deployed to the experiment for fast processing, filtering, and quality control. These various components are incorporated into a Globus Flow that uses Globus to rapidly move data for training, funcX for simulation and model training, and Globus to move models to the edge. In the future, the flow will also use funcX for inference at the edge.
+Data collected at an experiment (at APS or SLAC) is combined with simulation data to train a sample-specific DNN model, which is then deployed to the experiment for fast processing, filtering, and quality control. These various components are incorporated into a [Flow](https://github.com/ANL-Braid/flows#high-energy-x-ray-diffraction-microscopy) that uses Globus to rapidly move data for training, funcX for simulation and model training, and Globus to move models to the edge. In the future, the flow will also use funcX for inference at the edge.
 For more details, see [ArXiv2008.08198](https://arxiv.org/pdf/2008.08198.pdf).
 BraggNN is developed in the DOE BES project **Actionable Information from Sensor to Data Center**, in collaboration with SLAC.
 
@@ -127,4 +127,4 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 This work is supported by the U.S. Department of Energy's Office of Advanced Scientific Computing Research, via the project **Braid: Data Flow Automation for Scalable and FAIR Science**, and Office of Basic Energy Science, via the project **Actionable Information from Sensor to Data Center**; the [Argonne Leadership Computing Facilty](https://alcf.anl.gov); the [Advanced Photon Source](https://aps.anl.gov); and Argonne LDRD funds. Work on Globus Flows is supported by the National Science Foundation under award [1835890](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1835890).
 
-This page is accessible at [https://anl-braid.github.io/braid/](https://anl-braid.github.io/braid/).
+This page is accessible at [https://anl-braid.github.io/braid/](https://anl-braid.github.io/braid/) and editable in [this GitHub repository](https://github.com/ANL-Braid/braid/). 
