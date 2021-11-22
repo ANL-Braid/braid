@@ -76,7 +76,7 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 * The Braid project engages **Ben Blaiszik**, **Tekin Bicer**, **Kyle Chard**, **Ryan Chard**, **Ian Foster**, **Raj Kettimuthu**, **Zhengchun Liu**, **Bogdan Nicolae**, **Raf Vescovi**, and **Justin Wozniak**.
 
-* The Globus Flows service that we use to coordinate activities is developed by team that includes **Rachana Ananthakrishnan** and **Jim Pruyne**.
+* The [Globus Flows service](https://www.globus.org/platform/services/flows) that we use to coordinate activities is developed by a team that includes **Rachana Ananthakrishnan** and **Jim Pruyne**, **Rudy Richter**, **Kurt McKee**, and **Uriel Mandujano**.
 
 * At ALCF, we work with **Mike Papka** and **Tom Uram**, among others.
 
@@ -102,6 +102,6 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 ## Thanks!
 
-This work is supported by the U.S. Department of Energy's Office of Advanced Scientific Computing Research, via the project **Braid: Data Flow Automation for Scalable and FAIR Science**, and Office of Basic Energy Science, via the project **Actionable Information from Sensor to Data Center**; the [Argonne Leadership Computing Facilty](https://alcf.anl.gov); the [Advanced Photon Source](https://aps.anl.gov); and Argonne LDRD funds.
+This work is supported by the U.S. Department of Energy's Office of Advanced Scientific Computing Research, via the project **Braid: Data Flow Automation for Scalable and FAIR Science**, and Office of Basic Energy Science, via the project **Actionable Information from Sensor to Data Center**; the [Argonne Leadership Computing Facilty](https://alcf.anl.gov); the [Advanced Photon Source](https://aps.anl.gov); and Argonne LDRD funds. Work on Globus Flows is supported by the National Science Foundation under award [1835890](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1835890).
 
 This page is accessible at [https://anl-braid.github.io/braid/](https://anl-braid.github.io/braid/).
