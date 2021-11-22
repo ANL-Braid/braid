@@ -9,23 +9,25 @@ layout: home
 
 <img align="right" src="images/BraidFig.png">
 
-Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required. Methods and tools are needed to support the authoring, execution, and management of the resulting data- and computer-intensive *flows*. 
+Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required. Methods and tools are needed to support the authoring, execution, and management of the resulting data- and computer-intensive *Flows*. 
 
 To address these needs, the Braid project is developing a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
 We are using Gladier to deploy such solutions at Argonne’s [Advanced Photon Source](https://aps.anl.gov) (APS) and [Leadership Computing Facility](https://alcf.anl.gov) (ALCF), [SLAC](https://www6.slac.stanford.edu), and elsewhere. Examples include:
 delivery of data produced during tomographic experiments to remote collaborators;
 capture, analysis, and cataloging of data from X-ray Photon Correlation Spectroscopy (XPCS) experiments; and
 feedback based on analysis of data from serial synchrotron crystallography (SSX) experiments to guide data acquisition.
-Gladier allows each of these and other applications to be structured as one or more **flows**, each of which can be authored separately and adapted for reuse in different settings.
+Gladier allows each of these and other applications to be structured as one or more **Flows**, each of which can be authored separately and adapted for reuse in different settings.
 
 ## The Globus-based Gladier architecture
 
+The Gladier architecture leverages a data/computing substrate based on **data and compute agents** deployed across computer and storage systems at APS, ALCF, and elsewhere, all managed by cloud-hosted [Globus services](https://globus.org).
+This substrate makes it easy for programmers to route data and compute requests to different storage systems and computers.
+The [Globus Auth](https://docs.globus.org/api/auth/) identity and access management platform is used for single sign on and secure interactions between components,
+and Globus Flows is used to define and manage Flows that coordinate data transfer, analysis, cataloging, and other activities associated with experimental activities. 
+
 <img align="right" src="images/flow4.png">
 
-The Gladier architecture leverages a data/computing substrate based on **data and compute agents** deployed across computer and storage systems at APS, ALCF, and elsewhere, all managed by cloud-hosted Globus services.
-All components are supported by the Globus Auth identity and access management platform to enable single sign on and secure interactions between components.
-This substrate makes it easy for programmers to route data and compute requests to different storage systems and computers.
-Other services support the definition and management of flows that coordinate data transfer, analysis, cataloging, and other activities associated with experimental activities. The figure shows (bottom) Globus Connect and FunConnect agents deployed on APS and ALCF storage systems (cylinders) and computers (rectangles); (middle) cloud automation services; and (top) a (simplified) example flow, which transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; moves data to Petrel; and catalogs results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
+The figure shows (bottom) Globus Connect and funcX agents deployed on APS and ALCF storage systems (cylinders) and computers (rectangles); (middle) cloud automation services; and (top) a (simplified) example Flow, which transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; moves data to Petrel; and catalogs results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
 
 <!--- Include mention of DM --->
 
