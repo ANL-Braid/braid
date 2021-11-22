@@ -5,6 +5,8 @@ layout: home
 * TOC
 {:toc}
 
+## Braid: Linking Experiment, Simulation, and Artificial Intelligence
+
 <img align="right" src="images/BraidFig.png">
 
 Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required. Methods and tools are needed to support the authoring, execution, and management of the resulting data- and computer-intensive *flows*. 
@@ -16,7 +18,7 @@ capture, analysis, and cataloging of data from X-ray Photon Correlation Spectros
 feedback based on analysis of data from serial synchrotron crystallography (SSX) experiments to guide data acquisition.
 Gladier allows each of these and other applications to be structured as one or more **flows**, each of which can be authored separately and adapted for reuse in different settings.
 
-## Gladier architecture
+## The Globus-based Gladier architecture
 
 <img align="right" src="images/flow4.png">
 
@@ -27,7 +29,7 @@ Other services support the definition and management of flows that coordinate da
 
 <!--- Include mention of DM --->
 
-## Example applications
+## Example Gladier applications
 
 ### Serial Synchrotron Crystallography (SSX)
 
