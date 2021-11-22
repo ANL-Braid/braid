@@ -2,12 +2,14 @@
 layout: home
 ---
 
-<!--- # Experiments Linked with Infrastructure, Simulation, and AI --->
+* TOC
+{:toc}
 
+## Braid: Linking Experiment, Simulation, and Artificial Intelligence
 
 <img align="right" src="images/BraidFig.png">
 
-Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods are frequently also required.
+Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required. Methods and tools are needed to support the authoring, execution, and management of the resulting data- and computer-intensive *Flows*. 
 
 To address these needs, the Braid project has developed a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
 We are using Gladier to deploy a variety of such solutions at Argonne’s Advanced Photon Source (APS) and Leadership Computing Facility (ALCF), including:
@@ -27,6 +29,7 @@ Most experiments today can be summarized on a short list of steps: Sample creati
 
 The Gladier architecture leverages a data/computing substrate based on **data and compute agents** deployed across acquisition, computing, and storage systems at Advanced Photon Source, Argonne Leadership Computing Facility, and elsewhere.
 
+
 All components are supported by the Globus Auth identity and access management platform to enable single sign on and secure interactions between components.
 
 <img align="right" src="images/flow4.png">
@@ -34,9 +37,12 @@ All components are supported by the Globus Auth identity and access management p
 This substrate makes it easy for programmers to route data and compute requests to different storage systems and computers.
 Other services support the definition and management of flows that coordinate data transfer, analysis, cataloging, and other activities associated with experimental activities. The figure shows (bottom) Globus Connect and FunConnect agents deployed on APS and ALCF storage systems (cylinders) and computers (rectangles); (middle) cloud automation services; and (top) a (simplified) example flow, which transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; moves data to Petrel; and catalogs results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
 
+
 Since the Gladier actions work by wrapping python code into tools that can be used on the flows, researchers can quickly leverage their existing tools into the flows service. Gladier can also be integrated with already existing submission systems, an example is the APS Data Management system, which can start flows by calling the gladier client on-demand. Another example is the use of websites to invoke flows or use the acquisition system itself to achieve a closer to real-time processing.
 
-## Example applications
+## Example Gladier applications
+
+We provide brief summaries, plus pointers to more details, for several applications developed on the Gladier platform. 
 
 ### Serial Synchrotron Crystallography (SSX)
 
@@ -85,7 +91,7 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 * The Braid project engages **Ben Blaiszik**, **Tekin Bicer**, **Kyle Chard**, **Ryan Chard**, **Ian Foster**, **Raj Kettimuthu**, **Zhengchun Liu**, **Bogdan Nicolae**, **Rafael Vescovi**, and **Justin Wozniak**.
 
-* The Globus Flows service that we use to coordinate activities is developed by team that includes **Rachana Ananthakrishnan** and **Jim Pruyne**.
+* The [Globus Flows service](https://www.globus.org/platform/services/flows) that we use to coordinate activities is developed by a team that includes **Rachana Ananthakrishnan** and **Jim Pruyne**, **Rudy Richter**, **Kurt McKee**, and **Uriel Mandujano**.
 
 * At ALCF, we work with **Mike Papka** and **Tom Uram**, among others.
 
@@ -94,11 +100,11 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 ## Scientific papers
 
-**High-performance ptychographic reconstruction with federated facilities**, Tekin Bicer, Xiaodong Yu, Daniel J. Ching, Ryan Chard, Mathew J. Cherukara, Bogdan Nicolae, Rajkumar Kettimuthu, and Ian T.Foster, [Smoky Mountains Computational Science and Engineering Conference](https://smc2021.ornl.gov), 2021.
+* **High-performance ptychographic reconstruction with federated facilities**, Tekin Bicer, Xiaodong Yu, Daniel J. Ching, Ryan Chard, Mathew J. Cherukara, Bogdan Nicolae, Rajkumar Kettimuthu, and Ian T.Foster, [Smoky Mountains Computational Science and Engineering Conference](https://smc2021.ornl.gov), 2021.
 
-**Bridging data center AI Systems with edge computing for actionable information retrieval**, Zhengchun Liu, Ahsan Ali, Peter Kenesei, Antonino Miceli, Hemant Sharma,Nicholas Schwarz, Dennis Trujillo, Hyunseung Yoo, Ryan Coffee, Naoufal Layad,Jana Thayer, Ryan Herbst, Chunhong Yoon, Ian Foster, [3rd Annual Workshop on Extreme-Scale Experiment-in-the-Loop Computing](https://wordpress.cels.anl.gov/xloop-2021/about-xloop/), 2021.
+* [**Bridging data center AI Systems with edge computing for actionable information retrieval**](https://arxiv.org/abs/2105.13967), Zhengchun Liu, Ahsan Ali, Peter Kenesei, Antonino Miceli, Hemant Sharma,Nicholas Schwarz, Dennis Trujillo, Hyunseung Yoo, Ryan Coffee, Naoufal Layad,Jana Thayer, Ryan Herbst, Chunhong Yoon, Ian Foster, [3rd Annual Workshop on Extreme-Scale Experiment-in-the-Loop Computing](https://wordpress.cels.anl.gov/xloop-2021/about-xloop/), 2021.
 
-**[BraggNN: Fast X-ray Bragg peak analysis using deep learning](https://arxiv.org/abs/2008.08198)**, Zhengchun Liu, Hemant Sharma, Jun-Sang Park, Peter Kenesei, Antonino Miceli, Jonathan Almer, Rajkumar Kettimuthu, Ian Foster, [IUCrJ](https://journals.iucr.org/m/) (to appear).
+* **[BraggNN: Fast X-ray Bragg peak analysis using deep learning](https://arxiv.org/abs/2008.08198)**, Zhengchun Liu, Hemant Sharma, Jun-Sang Park, Peter Kenesei, Antonino Miceli, Jonathan Almer, Rajkumar Kettimuthu, Ian Foster, [IUCrJ](https://journals.iucr.org/m/) (to appear).
 
 ## Building blocks
 
@@ -111,6 +117,6 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 ## Thanks!
 
-This work is supported by the U.S. Department of Energy's Office of Advanced Scientific Computing Research, via the project **Braid: Data Flow Automation for Scalable and FAIR Science**, and Office of Basic Energy Science, via the project **Actionable Information from Sensor to Data Center**; the [Argonne Leadership Computing Facilty](https://alcf.anl.gov); the [Advanced Photon Source](https://aps.anl.gov); and Argonne LDRD funds.
+This work is supported by the U.S. Department of Energy's Office of Advanced Scientific Computing Research, via the project **Braid: Data Flow Automation for Scalable and FAIR Science**, and Office of Basic Energy Science, via the project **Actionable Information from Sensor to Data Center**; the [Argonne Leadership Computing Facilty](https://alcf.anl.gov); the [Advanced Photon Source](https://aps.anl.gov); and Argonne LDRD funds. Work on Globus Flows is supported by the National Science Foundation under award [1835890](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1835890).
 
 This page is accessible at [https://anl-braid.github.io/braid/](https://anl-braid.github.io/braid/).
