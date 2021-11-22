@@ -4,6 +4,7 @@ layout: home
 
 <img align="right" src="images/BraidFig.png">
 
+* TOC
 {:toc}
 
 Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required.
