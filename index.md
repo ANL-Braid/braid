@@ -11,25 +11,34 @@ layout: home
 
 Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required. Methods and tools are needed to support the authoring, execution, and management of the resulting data- and computer-intensive *Flows*. 
 
-To address these needs, the Braid project is developing a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
-We are using Gladier to deploy such solutions at Argonne’s [Advanced Photon Source](https://aps.anl.gov) (APS) and [Leadership Computing Facility](https://alcf.anl.gov) (ALCF), [SLAC](https://www6.slac.stanford.edu), and elsewhere. Examples include:
-delivery of data produced during tomographic experiments to remote collaborators;
-capture, analysis, and cataloging of data from X-ray Photon Correlation Spectroscopy (XPCS) experiments; and
-feedback based on analysis of data from serial synchrotron crystallography (SSX) experiments to guide data acquisition.
-Gladier allows each of these and other applications to be structured as one or more **Flows**, each of which can be authored separately and adapted for reuse in different settings.
+To address these needs, the Braid project has developed a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
+We are using Gladier to deploy a variety of such solutions at Argonne’s Advanced Photon Source (APS) and Leadership Computing Facility (ALCF), including:
 
-## The Globus-based Gladier architecture
+- delivery of data produced during tomographic experiments to remote collaborators;
+- capture, analysis, and cataloging of data from X-ray Photon Correlation Spectroscopy (XPCS) experiments; and
+- feedback based on analysis of data from serial synchrotron crystallography (SSX) experiments to guide data acquisition.
 
-The Gladier architecture leverages a data/computing substrate based on **data and compute agents** deployed across computer and storage systems at APS, ALCF, and elsewhere, all managed by cloud-hosted [Globus services](https://globus.org).
-This substrate makes it easy for programmers to route data and compute requests to different storage systems and computers.
-The [Globus Auth](https://docs.globus.org/api/auth/) identity and access management platform is used for single sign on and secure interactions between components,
-and Globus Flows is used to define and manage Flows that coordinate data transfer, analysis, cataloging, and other activities associated with experimental activities. 
+Gladier allows each of these and other applications to be structured as one or more **flows**, each of which can be authored separately and adapted for reuse in different settings.
+
+
+## Gladier Architecture
+<img align="right"  src="images/globus_simple_flow.jpg" width="500"/>
+
+
+Most experiments today can be summarized on a short list of steps: Sample creation, Data acquisition, Data Analysis and Publication. On the acquisition and processing side, the sequence of operations or 'flow' can be viewed as: acquire, transfer, process, create metadata, publish. The virtual infrastructure to perform this operations can all be found on the Globus stack have a unified authentication system.
+
+The Gladier architecture leverages a data/computing substrate based on **data and compute agents** deployed across acquisition, computing, and storage systems at Advanced Photon Source, Argonne Leadership Computing Facility, and elsewhere.
+
+
+All components are supported by the Globus Auth identity and access management platform to enable single sign on and secure interactions between components.
 
 <img align="right" src="images/flow4.png">
 
-The figure shows (bottom) Globus Connect and funcX agents deployed on APS and ALCF storage systems (cylinders) and computers (rectangles); (middle) cloud automation services; and (top) a (simplified) example Flow, which transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; moves data to Petrel; and catalogs results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
+This substrate makes it easy for programmers to route data and compute requests to different storage systems and computers.
+Other services support the definition and management of flows that coordinate data transfer, analysis, cataloging, and other activities associated with experimental activities. The figure shows (bottom) Globus Connect and FunConnect agents deployed on APS and ALCF storage systems (cylinders) and computers (rectangles); (middle) cloud automation services; and (top) a (simplified) example flow, which transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; moves data to Petrel; and catalogs results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
 
-<!--- Include mention of DM --->
+
+Since the Gladier actions work by wrapping python code into tools that can be used on the flows, researchers can quickly leverage their existing tools into the flows service. Gladier can also be integrated with already existing submission systems, an example is the APS Data Management system, which can start flows by calling the gladier client on-demand. Another example is the use of websites to invoke flows or use the acquisition system itself to achieve a closer to real-time processing.
 
 ## Example Gladier applications
 
@@ -76,11 +85,11 @@ Our work with the applications listed above and others are helping us to develop
 
 Work on this project involves numerous talented people at Argonne, the University of Chicago, and other institutions. We list here some of the major participants.
 
-* Much of the work on developing new flows is performed by **Ryan Chard** and **Rafael Vescosci**.
+* Much of the work on developing new flows is performed by **Ryan Chard** and **Rafael Vescovi** and **Nickolaus Saint**.
 
 * APS application development engages, among others, **Tekin Bicer**, **Raj Kettimuthu**, **Zhengchun Liu**, and **Aniket Tekawade**.
 
-* The Braid project engages **Ben Blaiszik**, **Tekin Bicer**, **Kyle Chard**, **Ryan Chard**, **Ian Foster**, **Raj Kettimuthu**, **Zhengchun Liu**, **Bogdan Nicolae**, **Raf Vescovi**, and **Justin Wozniak**.
+* The Braid project engages **Ben Blaiszik**, **Tekin Bicer**, **Kyle Chard**, **Ryan Chard**, **Ian Foster**, **Raj Kettimuthu**, **Zhengchun Liu**, **Bogdan Nicolae**, **Rafael Vescovi**, and **Justin Wozniak**.
 
 * The [Globus Flows service](https://www.globus.org/platform/services/flows) that we use to coordinate activities is developed by a team that includes **Rachana Ananthakrishnan** and **Jim Pruyne**, **Rudy Richter**, **Kurt McKee**, and **Uriel Mandujano**.
 
@@ -103,7 +112,7 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 **[funcX](https://funcx.org)** is a distributed Function as a Service (FaaS) platform that enables flexible, scalable, and high performance remote function execution. We use it to invoke computational tasks from within Flows.
 
-**Gladier** is a developer-focused framework for creating Flows from common building blocks. We use it to author many of our Braid application Flows.
+**[Gladier](https://github.com/globus-gladier/gladier)** is a developer-focused framework for creating Flows from common building blocks. We use it to author many of our Braid application Flows.
 
 
 ## Thanks!
