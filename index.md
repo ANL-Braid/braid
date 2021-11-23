@@ -82,8 +82,14 @@ xpcs_flow = [
     ]
 ```
 
+Gladier flows can be run as standalone Python programs or from Jupyter notebooks. They can  also be integrated with other submission systems, such as the [APS Data Management system](https://confluence.aps.anl.gov/display/DMGT/Infrastructure), which can start flows by calling the Gladier client.
 
-### T2: Enforce Policies 
+### T2: Enforce Data Policies 
+
+As illustrated above, a Braid application comprises one or more flows, each operating on supplied data and requiring the execution of specified actions. A particular application execution may be distinguished by the nature of the data provided, the resources available at the time of execution, and user-supplied parameters. 
+
+
+
 
 ### T3: Make Flows Interpretable 
 
@@ -91,41 +97,12 @@ xpcs_flow = [
 
 ### T5: Driving Science Applications
 
-To address these needs, the Braid project is developing a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
 We are using Gladier to deploy a variety of such solutions at Argonne’s [Advanced Photon Source](https://aps.anl.gov) (APS) and [Leadership Computing Facility](https://alcf.anl.gov) (ALCF), [SLAC](https://www6.slac.stanford.edu), and elsewhere. The following are three example applications:
 
 - delivery of data produced during tomographic experiments to remote collaborators;
 - capture, analysis, and cataloging of data from X-ray Photon Correlation Spectroscopy (XPCS) experiments; and
 - feedback based on analysis of data from serial synchrotron crystallography (SSX) experiments to guide data acquisition.
 
-Gladier allows such applications to be structured as one or more **Flows**, each of which can be authored separately and adapted for reuse in different settings. 
-
-## The Gladier Architecture
-
-A Gladier flow is a sequence of actions, each involving an interaction with one or more elements of a Globus-based distributed compute and storage fabric.
-For example, the figure shows a Flow in which, following sample preparation and data acquisition, five steps are performed: credentials are obtained from the user (Auth); data are transferred from the experimental facility to a computer system (Transfer); an analysis computation is performed on the computer system (funcX); metadata are obtained from a scientist (Describe); and data plus metadata are ingested into a searchable repository (Search).
-Gladier allows a developer to implement this flow simply by specifying the sequence of operations to be performed, with each action either being a Gladier-provided  standard action (denoted by a `glader_tools` prefer) or a user-defined action (e.g., here, `XPCS_analyze`).
-User-defined actions invoke user-supplied Python code, making it easy for researchers to incorporate their existing tools into Flows. 
-
-```
-xpcs_flow = [
-        'gladier_tools.Transfer',
-        'XPCS_analyze',
-        'gladier_tools.Describe',
-        'gladier_tools.Publish'
-    ]
-```
-
-<img align="right" src="images/flow4.png">
-
-The figure illustrates various elements of the Gladier architecture. 
-At the bottom is a data/computing substrate implemented via Globus Connect and funcX agents deployed on storage systems (cylinders) and computers (rectangles) at the Advanced Photon Source, Argonne Leadership Computing Facility, and elsewhere.
-This substrate makes it easy for programmers to route data and compute requests to different storage systems and computers.
-In the middle are cloud automation services, operated by Globus.
-At the top is a simple example flow (sadly slightly different than that shown in the preceding figure), which transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; transfers data to Petrel, an ALCF storage system; and ingests results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
-All components are supported by the Globus Auth identity and access management platform to enable single sign on and secure interactions between components.
-
-Gladier flows can be run as standalone Python programs or from Jupyter notebooks. They can  also be integrated with other submission systems, such as the [APS Data Management system](https://confluence.aps.anl.gov/display/DMGT/Infrastructure), which can start flows by calling the Gladier client.
 
 ## Example Gladier applications
 
