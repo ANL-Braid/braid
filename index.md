@@ -51,17 +51,37 @@ Bottom: A **uniform data/computing substrate**, implemented by Globus Connect an
 Middle: **Cloud automation services** support identity and access management (Globus Auth),
 data transfer management (Globus Transfer), flow management (Globus Flows), catalogs (Globus Search), and computation management (funcX).
 
-
-The top of the figure shows a simple example flow that transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; transfers data to Petrel, an ALCF storage system; and ingests results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
+The top of the figure shows a simple flow that transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; transfers data to Petrel, an ALCF storage system; and ingests results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
 
 
 ## Braid Technical Plan
 
 ### Thrust 1: Author Flows 
 
-New data collection, analysis, and curation methods present new challenges in ensuring reliable, efficient, and timely completion of the diverse data management and manipulation functions (what we call **flows**) that must be applied to data for quality control, feature extraction, compression, indexing, AI model training, archiving, instrument steering, and other purposes. 
+We aim in Braid to make it easy to develop new applications by both **authoring new flows**, by composing reusable, atomic actions, and **reusing (and possibly adapting) existing flows**. 
 
-Our goal in Braid is to make it easy for researchers to develop new applications by both to author new flows from reusable, atomic actions and to reuse existing flows, so that 
+<img align="right"  src="images/globus_simple_flow.jpg" width="500"/>
+
+Any flow, whether existing or new, is a sequence of **actions**, each involving an interaction with one or more elements of the Globus-based distributed infrastructure just described.
+For example, the figure shows a flow in which, following sample preparation and data acquisition, five steps are performed: credentials are obtained from the user (Auth); data are transferred from the experimental facility to a computer system (Transfer); an analysis computation is performed on the computer system (funcX); metadata are obtained from a scientist (Describe); and data plus metadata are ingested into a searchable repository (Search).
+
+We adopt [Globus Flows](https://www.globus.org/platform/services/flows) as the foundation on which we build flows. 
+Globus Flows provides a robust hosted service to which clients can direct requests to create flows, run flows, and manage flow executions.
+This foundation allows us to focus in Braid on: defining new actions required by our target applications; defining new flows, ideally in forms that permit easy adaptation and reuse; and, when and where necessary, extending the capabilities of the Globus Flows service and associated client tools.
+
+One initial focus of our work is to create Python-based tooling to simplify flow authoring. 
+The resulting Gladier library allows a developer to implement a flow by simply specifying the sequence of operations to be performed, with each action either being a Gladier-provided  standard action (denoted by a `glader_tools` prefer) or a user-defined action (e.g., here, `XPCS_analyze`).
+User-defined actions invoke user-supplied Python code, making it easy for researchers to incorporate their existing tools into Flows.
+
+```
+xpcs_flow = [
+        'gladier_tools.Transfer',
+        'XPCS_analyze',
+        'gladier_tools.Describe',
+        'gladier_tools.Publish'
+    ]
+```
+
 
 ### T2: Enforce Policies 
 
@@ -81,7 +101,6 @@ We are using Gladier to deploy a variety of such solutions at Argonne’s [Advan
 Gladier allows such applications to be structured as one or more **Flows**, each of which can be authored separately and adapted for reuse in different settings. 
 
 ## The Gladier Architecture
-<img align="right"  src="images/globus_simple_flow.jpg" width="500"/>
 
 A Gladier flow is a sequence of actions, each involving an interaction with one or more elements of a Globus-based distributed compute and storage fabric.
 For example, the figure shows a Flow in which, following sample preparation and data acquisition, five steps are performed: credentials are obtained from the user (Auth); data are transferred from the experimental facility to a computer system (Transfer); an analysis computation is performed on the computer system (funcX); metadata are obtained from a scientist (Describe); and data plus metadata are ingested into a searchable repository (Search).
