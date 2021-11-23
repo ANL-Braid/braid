@@ -19,7 +19,7 @@ For example, a ptychography experiment that uses a machine learning (ML) model f
 
 - - - -
 
-<img src="images/ BraidProject100.png">
+<img src="images/BraidFigure2.png">
 
 - - - -
 
