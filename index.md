@@ -50,6 +50,13 @@ Gladier flows can be run as standalone Python programs or from Jupyter notebooks
 
 ## Example Gladier applications
 
+This simple example, runnable by anyone, involves a simple Flow that asks you to upload a photo that it then transforms and adds to a catalog.
+
+The following Flows are all concerned with light source data analysis:
+
+* [Acquisition, analysis, curation, and visualization of Serial Synchrotron Crystallography data](https://github.com/ANL-Braid/flows#synchrotron-serial-crystalography)
+* [Localization of Bragg peaks in High Energy Diffraction Microscopy data](https://github.com/ANL-Braid/flows#high-energy-x-ray-diffraction-microscopy)
+
 We provide brief summaries, plus pointers to more details, for several applications developed on the Gladier platform. 
 
 ### Serial Synchrotron Crystallography (SSX)
@@ -108,9 +115,9 @@ Work on this project involves numerous talented people at Argonne, the Universit
 
 ## Scientific papers
 
-* **High-performance ptychographic reconstruction with federated facilities**, Tekin Bicer, Xiaodong Yu, Daniel J. Ching, Ryan Chard, Mathew J. Cherukara, Bogdan Nicolae, Rajkumar Kettimuthu, and Ian T.Foster, [Smoky Mountains Computational Science and Engineering Conference](https://smc2021.ornl.gov), 2021.
+* [**High-performance ptychographic reconstruction with federated facilities**](https://arxiv.org/abs/2111.11330_, Tekin Bicer, Xiaodong Yu, Daniel J. Ching, Ryan Chard, Mathew J. Cherukara, Bogdan Nicolae, Rajkumar Kettimuthu, and Ian T.Foster, [Smoky Mountains Computational Science and Engineering Conference](https://smc2021.ornl.gov), 2021.
 
-* [**Bridging data center AI Systems with edge computing for actionable information retrieval**](https://arxiv.org/abs/2105.13967), Zhengchun Liu, Ahsan Ali, Peter Kenesei, Antonino Miceli, Hemant Sharma,Nicholas Schwarz, Dennis Trujillo, Hyunseung Yoo, Ryan Coffee, Naoufal Layad,Jana Thayer, Ryan Herbst, Chunhong Yoon, Ian Foster, [3rd Annual Workshop on Extreme-Scale Experiment-in-the-Loop Computing](https://wordpress.cels.anl.gov/xloop-2021/about-xloop/), 2021.
+* [**Bridging data center AI Systems with edge computing for actionable information retrieval**](https://arxiv.org/abs/2105.13967), Zhengchun Liu, Ahsan Ali, Peter Kenesei, Antonino Miceli, Hemant Sharma,Nicholas Schwarz, Dennis Trujillo, Hyunseung Yoo, Ryan Coffee, Naoufal Layad,Jana Thayer, Ryan Herbst, Chunhong Yoon, Ian Foster, [3rd Annual Workshop on Extreme-Scale Experiment-in-the-Loop Computing](https://wordpress.cels.anl.gov/xloop-2021/about-xloop/), 2021. (Best paper award.)
 
 * **[BraggNN: Fast X-ray Bragg peak analysis using deep learning](https://arxiv.org/abs/2008.08198)**, Zhengchun Liu, Hemant Sharma, Jun-Sang Park, Peter Kenesei, Antonino Miceli, Jonathan Almer, Rajkumar Kettimuthu, Ian Foster, [IUCrJ](https://journals.iucr.org/m/) (to appear).
 
