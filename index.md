@@ -40,19 +40,36 @@ Follow the links for more information on various elements of the project.
 * TOC
 {:toc}
 
-## Thrust 1: Author Flows 
+## Braid Architectural Model
+
+Braid flows are intended to execute on a distributed infrastructure in which Globus-based services provide secure, reliable access to computing and storage resources; management of flows and other activities; and single sign on and secure interactions between components.
+
+<img align="right" src="images/flow4.png">
+
+The figure illustrates the principal infrastructure elements.
+Bottom: A **uniform data/computing substrate**, implemented by Globus Connect and funcX agents deployed on storage systems (cylinders) and computers (rectangles), makes it easy to direct data and compute requests to different storage systems and computers, such as at the Advanced Photon Source and Argonne Leadership Computing Facility, as shown here.
+Middle: **Cloud automation services** support identity and access management (Globus Auth),
+data transfer management (Globus Transfer), flow management (Globus Flows), catalogs (Globus Search), and computation management (funcX).
+
+
+The top of the figure shows a simple example flow that transfers data from the 19-1D beamline to Theta, an ALCF supercomputer; runs an analysis; transfers data to Petrel, an ALCF storage system; and ingests results—with all four actions managed by the automation services. The numbers associate the flow actions with where they are instantiated in the system.
+
+
+## Braid Technical Plan
+
+### Thrust 1: Author Flows 
 
 New data collection, analysis, and curation methods present new challenges in ensuring reliable, efficient, and timely completion of the diverse data management and manipulation functions (what we call **flows**) that must be applied to data for quality control, feature extraction, compression, indexing, AI model training, archiving, instrument steering, and other purposes. 
 
 Our goal in Braid is to make it easy for researchers to develop new applications by both to author new flows from reusable, atomic actions and to reuse existing flows, so that 
 
-## T2: Enforce Policies 
+### T2: Enforce Policies 
 
-## T3: Make Flows Interpretable 
+### T3: Make Flows Interpretable 
 
-## T4: Integrate Flows with HPC
+### T4: Integrate Flows with HPC
 
-## T5: Driving Science Applications
+### T5: Driving Science Applications
 
 To address these needs, the Braid project is developing a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
 We are using Gladier to deploy a variety of such solutions at Argonne’s [Advanced Photon Source](https://aps.anl.gov) (APS) and [Leadership Computing Facility](https://alcf.anl.gov) (ALCF), [SLAC](https://www6.slac.stanford.edu), and elsewhere. The following are three example applications:
