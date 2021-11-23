@@ -2,16 +2,57 @@
 layout: home
 ---
 
-* TOC
-{:toc}
-
-## Braid: Smart Interwoven Flows
+## Braid: Data Flow Automation for Scalable and FAIR Science
 
 <!-- <img align="right" src="images/BraidFig.png"> -->
 
-Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required. Methods and tools are then needed to support the authoring, execution, and management of the resulting data- and compute-intensive **Flows**. 
+Next-generation scientific instruments offer new means to understand and harness a broad range of physical and biological phenomena. However, the volume, velocity, and variety of data produced by these instruments challenge today’s often manual data collection, analysis, and curation methods. The result is missed scientific opportunities, both during experiments and later due to data not being rendered findable, accessible, interoperable, and reusable (FAIR). 
+
+The Braid project aims to overcome these challenges by making it easy for researchers to define sets of **flows** that individually and collectively implement application capabilities while satisfying requirements for rapid response, high reconstruction fidelity, data enhancement, data preservation, model training, etc.
+For example, a ptychography experiment that uses a machine learning (ML) model for rapid reconstruction may be structured as five distinct flows:
+
+1. **Data capture**: Retrieve data from instrument, perform fast reconstruction with edge ML model, and stage results to temporary storage. 
+2. **Analysis**: Process ML model results to derive additional quantities; 
+3. **Indexing**: Extract and synthesize metadata, and load into catalog; 
+4. **Reconstruction**: Move selected instrument data to HPC for full first-principles reconstruction. 
+5. **Model training**: Use reconstructed data to (re)train the edge ML model.
+
+- - - -
 
 <img src="images/ BraidProject100.png">
+
+- - - -
+
+As shown in the figure, we aim in Braid to enable such applications via advances in five areas: 
+
+* T1: Design, develop, and apply methods for **authoring flows** that implement desired data management patterns, by combining modular and repurposable actions.
+* T2: **Enforce policies** that researchers want flows to satisfy, concerning for example data capture, quality, and performance. 
+* T3: **Make flows interpretable**, to understand progress and policy adherence, and to capture information required to meet FAIR standards. 
+* T4: **Integrate flows with HPC** for such purposes as model training in response to new data collection.
+* T5: Apply and evaluate these new methods in **driving science applications**.
+
+<!-- It thus aims to enable scientific projects at DOE facilities to advance from today’s, largely manual, *collect now but analyze later* data analysis paradigm to a new *automated, AI-enhanced, self-documenting concurrent collect+analyze+feedback paradigm*. -->
+
+<!-- Next-generation scientific instruments offer new means to understand and harness a broad range of phenomena. New methods are required to collect, analyze, store, and curate the often voluminous data that these instruments produce, and to enable timely feedback to experimenters and experimental facilities. Coupling with computational simulations and artificial intelligence (AI) methods is frequently also required. Methods and tools are then needed to support the authoring, execution, and management of the resulting data- and compute-intensive **Flows**. -->
+
+Follow the links for more information on various elements of the project. 
+
+* TOC
+{:toc}
+
+## Thrust 1: Author Flows 
+
+New data collection, analysis, and curation methods present new challenges in ensuring reliable, efficient, and timely completion of the diverse data management and manipulation functions (what we call **flows**) that must be applied to data for quality control, feature extraction, compression, indexing, AI model training, archiving, instrument steering, and other purposes. 
+
+Our goal in Braid is to make it easy for researchers to develop new applications by both to author new flows from reusable, atomic actions and to reuse existing flows, so that 
+
+## T2: Enforce Policies 
+
+## T3: Make Flows Interpretable 
+
+## T4: Integrate Flows with HPC
+
+## T5: Driving Science Applications
 
 To address these needs, the Braid project is developing a data architecture, Gladier, that enables the **rapid development of customized data capture, storage, and analysis solutions for experimental facilities**.
 We are using Gladier to deploy a variety of such solutions at Argonne’s [Advanced Photon Source](https://aps.anl.gov) (APS) and [Leadership Computing Facility](https://alcf.anl.gov) (ALCF), [SLAC](https://www6.slac.stanford.edu), and elsewhere. The following are three example applications:
