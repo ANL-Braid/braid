@@ -10,5 +10,9 @@ In the future, additional Flows will be added to index, catalog, and archive ima
 
 <img align="right" src="images/TekinSystem.png" width="350">
 
+### Steps
+
+### Triggers
+
 
 ## Links

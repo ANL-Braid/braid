@@ -9,7 +9,12 @@ BraggNN is developed in the DOE BES project **Actionable Information from Sensor
 
 ## Flow Definition
 
+### 
+
 <img align="right" src="images/HEDM1.png" width="350">
 
+### Triggers
+
+The HEDM flow is used as a single-use script
 
 ## Links
