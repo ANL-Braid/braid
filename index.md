@@ -37,8 +37,9 @@ As shown in the figure, we aim in Braid to enable such applications via advances
 
 Follow the links for more information on various elements of the project. 
 
+<!-- This does not render correctly in GitHub:
 * TOC
-{:toc}
+{:toc} -->
 
 ## Braid Architectural Model
 
@@ -89,9 +90,7 @@ Gladier flows can be run as standalone Python programs or from Jupyter notebooks
 A flow specification says what actions should be performed, and in what order. 
 Data policies communicate user intents and desires concerning, for example, response time (“the output of flow _F_ is required within 10 seconds"), analyses to be performed (e.g., “analyses _R_ and _S_ must be run on every image; analysis _T_ is optional”), and data preservation (“outputs _A_ and _B_ must be staged to persistent storage before an experiment ends”).
 
-To permit explicit negotiation of tradeoffs and to avoid catastrophic failure in such situations, we will architect a Braid policy engine to translate high-level statements of priority goals into informed decisions concerning resource allocation, scheduling, and adaptation (e.g., delay or reduce
-
-fidelity of reconstruction, replace large data with summaries). Important research questions include how to express and implement, concisely, portably, and reliably, distributed policies concerning where, when, and how data should be analyzed, reduced, stored, indexed, retained, discarded, etc.
+To permit explicit negotiation of tradeoffs and to avoid catastrophic failure in such situations, we will architect a Braid policy engine to translate high-level statements of priority goals into informed decisions concerning resource allocation, scheduling, and adaptation (e.g., delay or reduce fidelity of reconstruction, replace large data with summaries). Important research questions include how to express and implement, concisely, portably, and reliably, distributed policies concerning where, when, and how data should be analyzed, reduced, stored, indexed, retained, discarded, etc.
 
 As illustrated above, a Braid application comprises one or more flows, each operating on supplied data and requiring the execution of specified actions. Given  particular application execution may be distinguished by the nature of the data provided, the resources available at the time of execution, and user-supplied parameters. 
 
