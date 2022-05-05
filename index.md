@@ -97,9 +97,13 @@ As illustrated above, a Braid application comprises one or more flows, each oper
 We need methods for mapping flows onto available resources in ways that satisfy high-level policies: e.g., response time (“the output of flow _F_ is required within 10 seconds),” metadata captured (e.g., “metadata extractors _R_ and _S_ must be run on every image”), and data preservation (“outputs _A_ and _B_ must be staged to persistent storage before an experiment ends”). We must implement these methods in ways that recognize and address the fact that some policy goals may be unrealizable at certain times due to conflicting resource demands.
 
 
-### T3: Make Flows Interpretable 
+### T3: Make Flows Interpretable
 
+Interpreting automatic policy decisions to understand progress or performance and to validate scientific results will require new provenance concepts and systems to capture not just the data obtained, but also the ML models produced, which may be more important in the era of artificial intelligence (AI) for science.
 
+The [Braid Provenance Engine (Braid-DB)](https://github.com/ANL-Braid/DB), provides specific features for use in an environment dominated by externally-produced data, such as experiment instruments, and machine learning (ML) data access patterns.  It consists of recursive and versioned provenance structures to capture how models may be constructed via other models (e.g., estimators and  surrogates) and frequent model updates, allowing the user to track past decisions as models make decisions and are retrained.
+
+Braid-DB, like traditional provenance systems, captures simulation inputs and outputs and model training inputs and outputs.  Importantly, it integrates provenance records with model version history so as to record how a possibly complex ensemble of variably-accurate models were trained and updated over time.  As training data may come from experiment, simulation, or other models (e.g., a higher-accuracy, higher-cost model, or an ensemble of lower-cost models) Braid-DB includes structures that allow a user to ask how a model inference result was obtained, in the form of a defensible statement.  The provenance structure is designed to be portable so that provenance histories can be merged with other records from collaborating teams, as when a user borrows a model from another team.
 
 ### T4: Integrate Flows with HPC
 
